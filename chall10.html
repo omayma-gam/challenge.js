@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter Example</title>
+</head>
+<body>
+    <button id="compteur-bouton">Cliquez-moi</button>
+    <p>Le bouton a été cliqué <span id="compteur">0</span> fois.</p>
+
+    <script>
+        // Initialiser le compteur à 0
+        var compteur = 0;
+
+        // Sélectionner le bouton et l'élément span par leurs id
+        var bouton = document.getElementById("compteur-bouton");
+        var compteurSpan = document.getElementById("compteur");
+
+        // Ajouter un écouteur d'événements au clic pour le bouton
+        bouton.addEventListener("click", function() {
+            // Incrémenter le compteur
+            compteur++;
+
+            // Mettre à jour le contenu de l'élément span avec le nouveau compteur
+            compteurSpan.textContent = compteur;
+        });
+    </script>
+</body>
+</html>

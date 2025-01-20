@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemple</title>
+</head>
+<body>
+    <ul id="ma-liste">
+        <li>Premier élément</li>
+    </ul>
+<script> 
+    var nouvelElement = document.createElement("li");
+    nouvelElement.textContent = "Nouvel élément";
+    var liste = document.getElementById("ma-liste");
+    liste.appendChild(nouvelElement);
+</script>
+    
+</body>
+</html>
+
