@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+</head>
+<body>
+    <select id="menu-deroulant"></select>
+
+    <script>
+        var options = ["Option 1", "Option 2", "Option 3", "Option 4"];
+        var menuDeroulant = document.getElementById("menu-deroulant");
+        options.forEach(function(optionText) {
+            var option = document.createElement("option");
+            option.textContent = optionText;
+            option.value = optionText.toLowerCase().replace(" ", "-"); // Assigner une valeur unique
+            menuDeroulant.appendChild(option);
+        });
+    </script>
+</body>
+</html>

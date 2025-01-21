@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survol de la souris</title>
+    <style>
+        .survol {
+            background-color: yellow; 
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mon-element">Passez la souris sur moi !</div>
+
+    <script>
+        var element = document.getElementById("mon-element");
+
+        element.addEventListener("mouseover", function() {
+            element.classList.add("survol");
+        });
+
+        element.addEventListener("mouseout", function() {
+            element.classList.remove("survol");
+        });
+    </script>
+</body>
+</html>

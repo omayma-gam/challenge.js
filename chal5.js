@@ -4,7 +4,7 @@
    var messageErreur = document.getElementById("message-erreur");
 
    formulaire.addEventListener("submit", function(event) {
-       if (champSaisie.value.trim() === "") {
+       if (champSaisie.value.trim() === ""){
            event.preventDefault();
            messageErreur.textContent = "Le champ de saisie ne peut pas être vide.";
        } else {
