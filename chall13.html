@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highlight Table Row</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .highlight {
+            background-color: yellow; /* Change this to your desired color */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>Engineer</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>25</td>
+                <td>Designer</td>
+            </tr>
+            <tr>
+                <td>Sam Brown</td>
+                <td>35</td>
+                <td>Manager</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const rows = document.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+        row.addEventListener('click', () => {
+            // Remove highlight class from all rows
+            rows.forEach(r => r.classList.remove('highlight'));
+
+            // Add highlight class to the clicked row
+            row.classList.add('highlight');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

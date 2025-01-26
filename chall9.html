@@ -7,8 +7,13 @@
     <img id="mon-image" src="th.jpg" alt="Image">
     <button id="changer-image">Changer l'image</button>
 
-    <script src="chal9.js">
-        
+    <script >
+        var bouton = document.getElementById("changer-image");
+var image = document.getElementById("mon-image");
+
+bouton.addEventListener("click", function() {
+    image.src = "th (1).jpg";
+});
     </script>
 </body>
 </html>

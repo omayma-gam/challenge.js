@@ -16,6 +16,19 @@
         <p id="message-erreur" class="error"></p>
     </form>
 
-    <script src="chal5.js"></script>
+    <script >
+           var formulaire = document.getElementById("mon-formulaire");
+   var champSaisie = document.getElementById("champ-saisie");
+   var messageErreur = document.getElementById("message-erreur");
+
+   formulaire.addEventListener("submit", function(event) {
+       if (champSaisie.value.trim() === ""){
+           event.preventDefault();
+           messageErreur.textContent = "Le champ de saisie ne peut pas être vide.";
+       } else {
+           messageErreur.textContent = "";
+       }
+   });
+    </script>
 </body>
 </html>

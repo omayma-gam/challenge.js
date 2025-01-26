@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #791d1d;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<table id="dynamic-table">
+    <thead>
+        <tr id="table-header">
+            <!-- Headers will be dynamically added here -->
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows will be dynamically added here -->
+    </tbody>
+</table>
+
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+    const table = document.getElementById('dynamic-table');
+    const headerRow = document.getElementById('table-header');
+    const tbody = table.querySelector('tbody');
+
+    // Example array of objects
+    const data = [
+        { Name: 'John Doe', Age: 30, Occupation: 'Engineer' },
+        { Name: 'Jane Smith', Age: 25, Occupation: 'Designer' },
+        { Name: 'Sam Brown', Age: 35, Occupation: 'Manager' }
+    ];
+
+    // Dynamically create table headers based on object keys
+    const headers = Object.keys(data[0]);
+    headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        headerRow.appendChild(th);
+    });
+
+    // Dynamically create table rows based on array data
+    data.forEach(item => {
+        const tr = document.createElement('tr');
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            td.textContent = item[header];
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    });
+});
+
+</script>
+</body>
+</html>

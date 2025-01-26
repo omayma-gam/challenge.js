@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Font Style</title>
+    <style>
+        /* Initial styles for the list items */
+        ul li {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="target-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<button id="italicize-button">Make Italic</button>
+
+<script >
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('italicize-button');
+    const listItems = document.querySelectorAll('#target-list li');
+
+    button.addEventListener('click', function() {
+        listItems.forEach(item => {
+            item.style.fontStyle = 'italic';
+        });
+    });
+});
+
+</script>
+</body>
+</html>

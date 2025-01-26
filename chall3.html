@@ -8,8 +8,12 @@
 <body>
     <button id="mon-bouton">Cliquez-moi</button>
 
-    <script src="chal3.js">
-        
+    <script >
+        var bouton = document.getElementById("mon-bouton");
+        bouton.addEventListener("click", function(){
+        bouton.style.backgroundColor = "red";
+        bouton.style.color = "white";
+});
     </script>
 </body>
 </html>

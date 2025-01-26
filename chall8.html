@@ -14,8 +14,13 @@
     <div id="element-a-supprimer">Omayma Gamrani.</div>
     <button id="bouton-supprimer">Supprimer l'élément</button>
 
-    <script src="chal8.js">
-      
+    <script >
+      var boutonSupprimer = document.getElementById("bouton-supprimer");
+
+boutonSupprimer.addEventListener("click", function() {
+    var elementASupprimer = document.getElementById("element-a-supprimer");
+    elementASupprimer.remove();
+});
     </script>
 </body>
 </html>

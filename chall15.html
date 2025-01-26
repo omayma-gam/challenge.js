@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll to Element</title>
+    <style>
+        /* Add some spacing to demonstrate the scrolling effect */
+        .spacer {
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="spacer"></div>
+<div id="target-element">Scroll to me!</div>
+<div class="spacer"></div>
+<button id="scroll-button">Scroll to Element</button>
+
+<script >
+    document.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById("scroll-button");
+    const target = document.getElementById("target-element");
+
+    button.addEventListener("click", function() {
+        target.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+</script>
+</body>
+</html>

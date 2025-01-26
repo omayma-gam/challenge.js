@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter List</title>
+    <style>
+        /* Add basic styles */
+        #list-container {
+            margin-top: 20px;
+        }
+        li {
+            padding: 5px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="filter-input" placeholder="Filter items...">
+<div id="list-container">
+    <ul id="item-list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Date</li>
+        <li>Fig</li>
+        <li>Grape</li>
+    </ul>
+</div>
+
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('filter-input');
+    const listItems = document.querySelectorAll('#item-list li');
+
+    input.addEventListener('input', function() {
+        const filterText = input.value.toLowerCase();
+        listItems.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(filterText)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
+</body>
+</html>
